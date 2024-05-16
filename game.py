@@ -105,9 +105,10 @@ def cow_level():
     command = Prompt()
     
     if command == "SEARCH":
-        print("As you trudge through the goop you find a note on a cow, it reads, THERE IS NO COW LEVEL, you smell the awful stench and sense your body mutating")
-        print("You gained invincibility!") 
+        print("As you trudge through the goop you find a note on a cow, it reads, THERE IS NO COW LEVEL, you smell the awful stench and sense your body mutating, gold rains from the ceiling . . . ")
+        print("You gained invincibility and 5000 GOLD!") 
         lives = 1000000000000000 
+        gold = 5000
         Chamber_of_souls()
         
     else:
@@ -167,30 +168,37 @@ def Chamber_of_souls():
         print("GAME OVER")
         Start()
         Chamber_of_souls()
+        
     elif command == "HELP": 
         help()
         Chamber_of_souls() 
+        
     elif command == "MAP":
         if map1 == 1: 
-            printMap()
+            print_map()
             Chamber_of_souls()
         else:
             print("You need to buy a map")
             Chamber_of_souls()
+            
     elif command == "LIVES": 
         countlives()
         Chamber_of_souls() 
+        
     elif command == "SEARCH":
         print("You dont find anything here.")
         Chamber_of_souls() 
+        
     elif command == "RESTART":
         lives = 3
         gold = 0
         artifacts = 0
         Start()
+        
     elif command == "GOLD": 
         countgold()
         Chamber_of_souls() 
+        
     else:
         print("Type a command if you need help type HELP")
         Chamber_of_souls()
@@ -207,45 +215,57 @@ def Throne_room():
     print("You are in the Throne room.")
     print("To speak to Rico enter the command SPEAK")
     command = Prompt()
+    
     if command == "SOUTH":
         Chamber_of_souls() 
+        
     elif command == "EAST":
         print("As you walk through the ornate stone doorway you notice that this room was once a bedroom. A four post bed lies in the corner of the room, a tile lies loose on the ground and an old statue lies to the north")
         print("A small hole in the wall is hidden behind the curtain to the EAST")
         Bedroom()
+        
     elif command == "SPEAK":
         print(""">>>HEY YOU! YEA YOU! GUY WITH THE HAT OR WHATEVER! MY FIRST CUSTOMER! YOU CAN BUY COOL ITEMS FROM ME, RICO, TO HELP YOU ON YOUR QUEST FOR GOLD! """)
         print("TYPE SHOP AND CHECK MY STOCK AND BUY WHAT YOU LIKE! NYEH NYEH NYEH")
         Rico()
+        
     elif command == "RESTART":
             lives = 3
             gold = 0
             artifacts = 0
             Start()
+            
     elif command == "EXIT":
         print("Thanks for playing!")
+        
     elif command == "WEST":
         print("You find a hallway lined with vines with several holes in the walls, in front of you lies a door to the west.")
         Hallway1()
+        
     elif command == "NORTH":
         print("Through the ruined pillars massive double doors tower above you with three artifact slots")
         print("Find and enter the artifacts to open the door")
         Endroom()
+        
     elif command == "ARTIFACTS":
         countartifacts()
         Throne_room()
+        
     elif command == "LIVES":
         countlives()
         Throne_room()
+        
     elif command == "HELP":
         help()
         Throne_room() 
+        
     elif command == "MAP":
         if map1 == 1:
-            printMap()
+            print_map()
         else:
             print("You need to buy a map")
             Throne_room()
+            
     elif command == "SEARCH": 
         if Search == 0:
             print("You found 30 gold coins in a small pouch on the Throne") 
@@ -276,17 +296,22 @@ def Hallway1():
 
     if command == "NORTH":
         print("You ran into a wall!") 
+        
     elif command == "EAST":
         print("You make your way back towards the large throne with rico standing next to it")
         Throne_room()
+        
     elif command == "WEST":
         print("You ran into a wall")
         Hallway1()
+        
     elif command == "SOUTH":
         print("You ran into a wall")
         Hallway1()
+        
     elif command == "EXIT":
         print("Thanks for playing!")
+        
     elif command == "SEARCH":
         if Search == 0 or Search == 1 or Search == 2:
             print("you climb up the vines to find a treasure chest with 50 gold coins")
@@ -300,15 +325,18 @@ def Hallway1():
     elif command == "ARTIFACTS": 
         countartifacts()
         Hallway1()
+        
     elif command == "LIVES":
         countlives()
         Hallway1()
+        
     elif command == "HELP":
         help()
         Hallway1()
+        
     elif command == "MAP":
         if map1 == 1:
-            printMap()
+            print_map()
             Hallway1()
         else:
             print("You need to buy a map")
@@ -321,14 +349,17 @@ def Hallway1():
         else:
             print("looks like you need some advanced climbing gear to get to this room")
             Hallway1()
+            
     elif command == "RESTART":
             lives = 3
             gold = 0
             artifacts = 0
             Start()
+            
     elif command == "GOLD": 
         countgold()
         Hallway1() 
+        
     else:
         print("Type the command HELP if you need help")
         Hallway1()
@@ -357,16 +388,18 @@ def puzzle1room():
     print("What letter is hidden")
     command = Prompt()
     if artifacts == 0:
-        if command == "A":
+        if command == "V":
             print("CORRECT!")
             print("The large door slides open with a artifact laying peacefully on a table")
             print("You walk over and pick it up")
             print("the second puzzle room is now open")
             artifacts = artifacts + 1
             Hallway1()
+            
         elif command == "LIVES": 
             countlives()
             puzzle1room() 
+            
         else:
             print("Thats not correct")
             print("spikes shoot from the walls and impale you!")
@@ -377,6 +410,7 @@ def puzzle1room():
                 lives = 3
                 Start()
             puzzle1room() 
+            
     elif command == "RESTART":
         lives = 3
         gold = 0
@@ -475,7 +509,7 @@ def Bedroom():
             Bedroom()
     elif command == "MAP":
         if map1 == 1: 
-            printMap()
+            print_map()
         else:
             print("You need to buy a map") 
             Bedroom()
@@ -546,7 +580,7 @@ def Hallway2():
         Hallway2()
     elif command == "MAP":
         if map1 == 1: 
-            printMap()
+            print_map()
         else:
             print("You need to buy a map") 
             Hallway2()
@@ -591,7 +625,7 @@ def puzzle2():
             puzzle2()
         elif command == "MAP":
             if map1 == 1: 
-                printMap()
+                print_map()
             else:
                 print("You need to buy a map") 
                 puzzle2()
