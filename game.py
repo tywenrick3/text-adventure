@@ -36,23 +36,22 @@ def Start():
     Chamber_of_souls()
 
 
-def printMap():
+def print_map():
     print("\n")
     print("      |_______________WEST________________________")
     print("      |                                         |")
     print("      |                                         |")
-    print("      |          hallway - puzzle 1                 |")
-    print("      |           |                              |")
-    print("SOUTH Entrance - throne - end room               | NORTH") 
-    print("      |           |                              |")
-    print("      |         bedroom                              |")
-    print("      |           |                              |")
-    print("      |         hallway -- puzzle 2              |")
-    print("      |                                          |")
-    print("      |                                          |")
+    print("      |          hallway - puzzle 1             |")
+    print("      |           |                             |")
+    print("SOUTH Entrance - throne - end room              | NORTH") 
+    print("      |           |                             |")
+    print("      |         bedroom                         |")
+    print("      |           |                             |")
+    print("      |         hallway -- puzzle 2             |")
+    print("      |                                         |")
+    print("      |                                         |")
     print("      |________________EAST______________________")
     print("\n")
-
 
 def Prompt():
     x = input('>>>')
